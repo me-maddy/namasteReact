@@ -1,14 +1,17 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
+
 const heading = React.createElement(
   "h1",
   { id: "heading" },
-  "Now, it is created using react"
+  "Now, Learn what matters!"
 );
 const heading2 = React.createElement(
   "h1",
   { id: "heading1" },
-  "Now, it is created using react2"
+  "Hey there! I am Madan and here by teach you basics of react!"
 );
-const parent = React.createElement("div", {}, [
+const parent = React.createElement("div", { className: "header" }, [
   React.createElement(
     "span",
     { id: "link" },
@@ -17,6 +20,6 @@ const parent = React.createElement("div", {}, [
   heading,
   heading2,
 ]);
-console.log(heading);
+console.log(parent);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(parent);
