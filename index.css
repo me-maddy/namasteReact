@@ -1,7 +1,33 @@
-#heading {
-  background-color: red;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-#heading1 {
-  background-color: yellow;
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15px;
+  padding-right: 35px;
+  align-items: center;
+}
+
+.logo-container > img {
+  height: 70px;
+}
+
+.navbar > ul {
+  display: flex;
+  list-style: none;
+  font-size: 22px;
+  gap: 50px;
+}
+
+.navbar > ul > .list {
+  cursor: pointer;
+}
+
+.navbar > ul > .list:hover {
+  text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
+  transform: scale(1.1);
 }
