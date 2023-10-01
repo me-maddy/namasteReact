@@ -68,3 +68,21 @@ Today, we mainly used functional components because of easier and readable synta
 Component Composition: When we use components inside another component. That is what we called component composition.
 
 Note:- Inside JSX syntax, javascript can be execute using curly braces{}.
+
+DAY 4 (Food Application) - Practise
+
+-Created food application using reactjs, icons and css.
+-do some practise to brush your skills and understand how to use data to control UI of application.
+-use of map method of array to render same cart with different data.
+
+-Config Driven UI :- UI can be controlled by the configuration file(send by backend through api). Let's say already define the content, size and position of layout of an application in a config(file) then we can use this config to define the UI of an application and this is known as config Driven UI. As UI of an application is driven by data of Config(file).
+
+Let's suppose we want to run our application in different location, So info that shown by website is differnt and it can be done by config driven UI. Data is fetched by config to define the UI of an application.
+
+-What are props?
+It defines as the properties to pass down to child components and this child components receives these properties as props in a parameter of defined component function.
+
+key in react:-
+used to uniquely identify the child to optimize the performance of an application.
+Key should be unique by which react can identify it to do further changes in an application.
+Let's suppose there are five child of react element. Now, key helps react to uniquely identifies each child so that it will not render those childs again if there is addition of new child in a list.
