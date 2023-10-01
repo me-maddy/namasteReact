@@ -179,7 +179,6 @@ const data = [
       avgRating: 4.2,
 
       deliveryTime: 25,
-
       aggregatedDiscountInfoV3: {
         header: "20% OFF",
         subHeader: "UPTO ₹50",
