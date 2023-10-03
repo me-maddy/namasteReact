@@ -95,16 +95,6 @@ export const data = [
   },
   {
     info: {
-      id: "361094",
-      name: "Sweet Truth - Cake and Desserts",
-      cloudinaryImageId: "4a3b48488e3aa9bda13efd8cfcd95284",
-      cuisines: ["Snacks", "Bakery", "Desserts", "Beverages"],
-      avgRating: 4.2,
-      deliveryTime: 25,
-    },
-  },
-  {
-    info: {
       id: "439068",
       name: "Baskin Robbins - Ice Cream Desserts",
       cloudinaryImageId: "85ccae4e3576f9330af102c46ca85395",
@@ -113,112 +103,7 @@ export const data = [
       deliveryTime: 33,
     },
   },
-  {
-    info: {
-      id: "361095",
-      name: "LunchBox - Meals and Thalis",
-      cloudinaryImageId: "ehuumajovdh0qu396khx",
-      cuisines: [
-        "Biryani",
-        "North Indian",
-        "Punjabi",
-        "Healthy Food",
-        "Desserts",
-        "Beverages",
-      ],
-      avgRating: 4.2,
-      deliveryTime: 34,
-    },
-  },
-  {
-    info: {
-      id: "361090",
-      name: "Faasos - Wraps & Rolls",
-      cloudinaryImageId: "af33b81798b11deba338e94b7585d348",
-      cuisines: [
-        "Kebabs",
-        "Fast Food",
-        "Snacks",
-        "North Indian",
-        "American",
-        "Healthy Food",
-        "Desserts",
-        "Beverages",
-      ],
-      avgRating: 4.3,
-      deliveryTime: 33,
-    },
-  },
-  {
-    info: {
-      id: "289869",
-      name: "Pushpak Misthan Bhandar",
-      cloudinaryImageId: "xxolr2vqymwj3ukfq6nx",
-      cuisines: ["Sweets", "Street Food"],
-      avgRating: 4.1,
-      deliveryTime: 22,
-    },
-  },
-  {
-    info: {
-      id: "137924",
-      name: "Raj Rasoi Sweets & Restaurant",
-      cloudinaryImageId: "nwr8wksyyakepe4prpjy",
-      cuisines: ["South Indian", "North Indian", "Snacks", "Sweets"],
-      avgRating: 4.1,
-      deliveryTime: 23,
-    },
-  },
-  {
-    info: {
-      id: "421647",
-      name: "Deviram Food Circle",
-      cloudinaryImageId: "isgcj4eauamm0bfinnaz",
-      cuisines: ["Sweets", "Snacks", "Continental", "North Indian"],
-      avgRating: 4,
-      deliveryTime: 28,
-    },
-  },
-  {
-    info: {
-      id: "280486",
-      name: "Cakewala",
-      cloudinaryImageId: "5d537cc4b3d7a849fa7e7e29cee19565",
-      cuisines: ["Bakery"],
-      avgRating: 3.8,
-      deliveryTime: 57,
-    },
-  },
-  {
-    info: {
-      id: "74562",
-      name: "Bhagat Halwai (Dayal Bagh)",
-      cloudinaryImageId: "crfkxcc5jbvdgmxioey2",
-      cuisines: ["Chinese", "North Indian", "Sweets", "South Indian", "Chaat"],
-      avgRating: 4,
-      deliveryTime: 30,
-    },
-  },
-  {
-    info: {
-      id: "102953",
-      name: "GMB - Gopika Sweets & Restaurant",
-      cloudinaryImageId: "l6iqlfn5uwesenzcm0xk",
-      cuisines: ["Sweets", "North Indian", "Snacks"],
-      avgRating: 4.3,
-      deliveryTime: 31,
-    },
-  },
-  {
-    info: {
-      id: "202097",
-      name: "New Pizza King",
-      cloudinaryImageId: "xdp9sbt5mwrsfz4wile7",
-      cuisines: ["Pizzas", "Italian"],
-      avgRating: 4.1,
-      deliveryTime: 33,
-    },
-  },
+
   {
     info: {
       id: "362058",

@@ -75,6 +75,7 @@
 .container > .top {
   width: 100%;
   display: flex;
+  align-items: center;
   justify-content: center;
 }
 
@@ -91,18 +92,53 @@
 }
 
 .search-box > input {
-  font-size: 20px;
-  min-width: 300px;
-  max-width: 500px;
+  font-size: 18px;
+  min-width: 350px;
+  max-width: 600px;
   border: none;
   outline: none;
-  color: #464646;
+  color: #5a5a5a;
+
+  &::placeholder {
+    color: #969696;
+  }
 }
 
 .search-box > .icon {
   color: #888888;
   cursor: pointer;
   font-size: 25px;
+}
+
+.filter-box {
+  padding: 0 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.filter-box > .filter {
+  padding: 8px 12px;
+  font-size: 20px;
+  color: #fff;
+  background-color: rgb(23, 194, 23);
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:first-child {
+    background-color: blue;
+  }
+}
+
+.invalid-data {
+  font-size: 22px;
+  span {
+    color: red;
+  }
 }
 
 .container > .bottom {

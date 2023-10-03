@@ -86,3 +86,20 @@ key in react:-
 used to uniquely identify the child to optimize the performance of an application.
 Key should be unique by which react can identify it to do further changes in an application.
 Let's suppose there are five child of react element. Now, key helps react to uniquely identifies each child so that it will not render those childs again if there is addition of new child in a list.
+
+DAY 5 (Improvement in Food Application) -
+
+-Folder Structure to keep clean and readable code
+-Imports and Exports(Named and default)
+-What are hooks?
+Hooks are javascript function that gives power to the react application. They are special function that provides more functionalities and features to the react application.
+
+-State management using useState() hook
+UI layer and react state are synced. For example - If there is any change in react state, then this change reflects on Component of that state. That component re-renders to update the UI as state changes of that component.
+useState() hook returns an array of two elements. First element is used as state of the component and second element is a function which is used to update the first element(state). React keep an eye on state variable to maintain the state of an application. It basically maintains the changes of the state.
+
+-How react variables are different from normal js variables
+-Actual DOM and virtual DOM
+-Reconcilliation,diffing and React Fibre
+-How UI updates when react state changes
+-Events in react
