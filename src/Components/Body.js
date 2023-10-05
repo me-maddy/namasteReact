@@ -1,17 +1,40 @@
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import Restaurants from "./Restaurants";
-import { useState } from "react";
-import { data } from "../utilities/mockdata";
+import { useState, useEffect } from "react";
+import Shimmer from "./Shimmer";
 
 const Body = () => {
   const [value, setValue] = useState({
-    data: data,
+    data: [],
+    savedData: [],
     input: "",
-    loading: false,
     preVal: "",
+    loading: true,
   });
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    const response = await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=27.1766701&lng=78.00807449999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+    );
+    const data = await response.json();
+    const restaurantList =
+      data?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants;
+    console.log(restaurantList, data);
+    setValue((preValue) => ({
+      ...preValue,
+      data: restaurantList,
+      savedData: restaurantList,
+      loading: false,
+    }));
+  };
+
   const searchList = () => {
-    const newData = data.filter((item) =>
+    const newData = value.savedData.filter((item) =>
       item.info.name.toLowerCase().includes(value.input.toLowerCase())
     );
 
@@ -19,17 +42,17 @@ const Body = () => {
       ...preValue,
       preVal: value.input,
       data: newData,
-      loading: newData.length < 1 ? true : false,
       input: "",
     }));
   };
 
   const filterTopRated = () => {
-    const filteredData = data.filter((item) => item.info.avgRating > 4);
+    const filteredData = value.savedData.filter(
+      (item) => item.info.avgRating > 4
+    );
     setValue((preValue) => ({
       ...preValue,
       data: filteredData,
-      loading: false,
     }));
   };
   return (
@@ -54,8 +77,8 @@ const Body = () => {
           onClick={() =>
             setValue((preValue) => ({
               ...preValue,
-              data: data,
-              loading: false,
+              data: value.savedData,
+              found: false,
             }))
           }
         >
@@ -65,13 +88,18 @@ const Body = () => {
           Top Rated Restaurants
         </button>
       </div>
-      {value.loading ? (
-        <div className="invalid-data">
-          <p>
-            {value.preVal.toUpperCase()} has not found!{" "}
-            <span>Search Again</span>
-          </p>
-        </div>
+
+      {value?.data?.length < 1 ? (
+        value.loading ? (
+          <Shimmer />
+        ) : (
+          <div className="invalid-data">
+            <p>
+              {value.preVal.toUpperCase()} has not found!{" "}
+              <span>Search Again</span>
+            </p>
+          </div>
+        )
       ) : (
         <Restaurants list={value.data} />
       )}

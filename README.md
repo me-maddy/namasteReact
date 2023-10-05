@@ -103,3 +103,32 @@ useState() hook returns an array of two elements. First element is used as state
 -Reconcilliation,diffing and React Fibre
 -How UI updates when react state changes
 -Events in react
+
+DAY 6 (Let's explore the world)
+
+-Monolith and Microservices
+Monolith architecture is a traditional model of software architecture. It is built as a single unified unit that is self-contained and independent of other applications. It is a single service architecture in which all the business logic, UI, backend, and any other jobs are at one place and they are dependent on each other. All the jobs of monolith architecture are written with single code base. If we want to change anything in monolith application, then we need to again deploy the whole application to update the change.
+
+Microservices is a new model of software architecture. This architecture is a collection of multiple independent services.
+In this architecture, whole application is separated into multiple independent services and these services can be deployed independently. These services can interact with other services depending on use case. If one service need logic or data of other service then this service interact with other service only when it need it. There might be multiple code base for each service. The collection of all services make a single application and that's a microservices. All concerns(business,UI,backend,database) are separated into multiple independent jobs and interact when there is need.
+
+-useEffect() hook-
+This hook is useful to perform side effects in an application. It is mainly used to do API call and fetch data.
+This hook accepts two arguments-first is callback function(mandatory) and second is dependency array(optional).
+Callback function of this hook is called after complete loading of page and dependency array is used to control invoking of callback function after initial call of this callback function.
+
+-How to add Shimmer UI instead of spinner and how it can impact on one's mind
+-Conditional Rendering
+
+DAY 7 (Find the path)
+
+-How useState and useEffect works (Detailed Explaination)
+✅ Creating Routes in React
+✅ Introduction to React Router DOM and it's amazing features
+✅ How to make Route configuration, make an Customized Error page and handle the error using useRouteError() hook
+✅ How to make Children Routes and make the Header Component common for all the Pages
+✅ How to specify the Children Routes in our App using Outlet Component
+✅ Not using Anchor Tags in React and why React is called SPA (Single Page Application)
+✅ Routings in Web Apps and Intro to Dynamic Routing
+✅ Defining Routes for our RestaurantMenu component and defining dynamic routing
+✅ useParams() hook to get the parameter values from the url
