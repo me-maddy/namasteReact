@@ -19,7 +19,9 @@
   "homepage": "https://github.com/me-maddy/react-project#readme",
   "devDependencies": {
     "parcel": "^2.9.3",
-    "process": "^0.11.10"
+    "postcss": "^8.4.31",
+    "process": "^0.11.10",
+    "tailwindcss": "^3.3.3"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -27,7 +29,8 @@
     "@mui/icons-material": "^5.14.11",
     "@mui/material": "^5.14.11",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.16.0"
   },
   "browserlists": [
     "last 2 chrome versions"

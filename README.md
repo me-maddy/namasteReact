@@ -120,15 +120,31 @@ Callback function of this hook is called after complete loading of page and depe
 -How to add Shimmer UI instead of spinner and how it can impact on one's mind
 -Conditional Rendering
 
-DAY 7 (Find the path)
+DAY 7 (#Find the path)
 
 -How useState and useEffect works (Detailed Explaination)
-✅ Creating Routes in React
-✅ Introduction to React Router DOM and it's amazing features
-✅ How to make Route configuration, make an Customized Error page and handle the error using useRouteError() hook
-✅ How to make Children Routes and make the Header Component common for all the Pages
-✅ How to specify the Children Routes in our App using Outlet Component
-✅ Not using Anchor Tags in React and why React is called SPA (Single Page Application)
-✅ Routings in Web Apps and Intro to Dynamic Routing
-✅ Defining Routes for our RestaurantMenu component and defining dynamic routing
-✅ useParams() hook to get the parameter values from the url
+-Creating Routes in React
+-Introduction to React Router DOM and it's amazing features
+-How to make Route configuration, make an Customized Error page and handle the error using useRouteError() hook
+-How to make Children Routes and make the Header Component common for all the Pages
+-How to specify the Children Routes in our App using Outlet Component
+-Not using Anchor Tags in React and why React is called SPA (Single Page Application)
+-Routings in Web Apps and Intro to Dynamic Routing
+-Defining Routes for our RestaurantMenu component and dynamic routing
+-useParams() hook to get the parameter values from the url
+
+DAY 8 (#Let's get Classy)
+
+1. ✅ Class Components: We delved into the world of class-based components, understanding their structure and how they differ from functional components.
+
+2. ⚡ Lifecycle Insights: Explored the lifecycle methods of class-based components, including constructor(), render(), componentDidMount(), componentDidUpdate(), and componentWillUnmount().
+
+3. 🔄 Constructor Chronicles: Learned how the constructor() method sets up initial states and props, playing a crucial role in component initialization.
+
+4. 🛠️ Handling State: Discovered how to create and manage state variables in class-based components using this.state and this.setState().
+
+5. 📡 Making API Calls: Explored the significance of componentDidMount() for making API calls and performed tasks when a component is already in the DOM.
+
+6. 🚧 Coding Challenges: Tackled hands-on coding challenges, creating class-based components, passing props, and mastering lifecycle methods.
+
+Class-based components offer a deeper understanding of React's foundations and are still relevant in interviews and legacy projects.

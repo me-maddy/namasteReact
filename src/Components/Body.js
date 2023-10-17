@@ -1,38 +1,12 @@
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
-import Restaurants from "./Restaurants";
-import { useState, useEffect } from "react";
+import RestaurantCart from "./Cart";
 import Shimmer from "./Shimmer";
+import useBody from "../utilities/useBody";
+import useStatus from "../utilities/useStatus";
 
 const Body = () => {
-  const [value, setValue] = useState({
-    data: [],
-    savedData: [],
-    input: "",
-    preVal: "",
-    loading: true,
-  });
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  const fetchData = async () => {
-    const response = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=27.1766701&lng=78.00807449999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-    );
-    const data = await response.json();
-    const restaurantList =
-      data?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle
-        ?.restaurants;
-    console.log(restaurantList, data);
-    setValue((preValue) => ({
-      ...preValue,
-      data: restaurantList,
-      savedData: restaurantList,
-      loading: false,
-    }));
-  };
-
+  const [value, setValue] = useBody();
+  const status = useStatus();
   const searchList = () => {
     const newData = value.savedData.filter((item) =>
       item.info.name.toLowerCase().includes(value.input.toLowerCase())
@@ -55,10 +29,27 @@ const Body = () => {
       data: filteredData,
     }));
   };
+
+  const showAllRestaurant = () => {
+    setValue((preValue) => ({
+      ...preValue,
+      data: value.savedData,
+      found: false,
+    }));
+  };
+
+  if (!status) {
+    return (
+      <div className="min-h-screen w-full text-center flex flex-col justify-center items-center">
+        <h1 className="text-2xl">Looks like you are offline!</h1>
+        <h1 className="text-2xl">Check your internet connection🛜</h1>
+      </div>
+    );
+  }
   return (
-    <div className="container">
-      <div className="top">
-        <div className="search-box">
+    <div className="container w-full mt-20 flex gap-y-10 flex-col mb-8 items-center">
+      <div className="w-full">
+        <div className="border-[1px] border-gray-300 py-2 pl-2 pr-1 rounded-md flex items-center w-fit mx-auto shadow">
           <input
             type="search"
             value={value.input}
@@ -66,26 +57,27 @@ const Body = () => {
             onChange={(e) =>
               setValue((preValue) => ({ ...preValue, input: e.target.value }))
             }
+            className="pl-1 outline-none text-slate-600 w-64 border-none mr-1 text-lg sm:max-w-2xl sm:min-w-max sm:w-96 caret-gray-500"
           />
-          <SearchOutlinedIcon className="icon" onClick={searchList} />
+          <SearchOutlinedIcon
+            className="cursor-pointer text-gray-500"
+            onClick={searchList}
+          />
         </div>
       </div>
 
-      <div className="filter-box">
+      <div className="flex justify-between w-full px-8">
         <button
-          className="filter"
-          onClick={() =>
-            setValue((preValue) => ({
-              ...preValue,
-              data: value.savedData,
-              found: false,
-            }))
-          }
+          className="bg-green-600 rounded-md text-white text-xl px-2.5 py-1.5 hover:opacity-60 transition-opacity ease-in duration-300"
+          onClick={showAllRestaurant}
         >
           All Restaurants
         </button>
-        <button className="filter" onClick={filterTopRated}>
-          Top Rated Restaurants
+        <button
+          className="bg-red-600 rounded-md text-white text-xl px-2.5 py-1.5 hover:opacity-60 transition-opacity ease-in duration-300"
+          onClick={filterTopRated}
+        >
+          Top Rated
         </button>
       </div>
 
@@ -93,15 +85,19 @@ const Body = () => {
         value.loading ? (
           <Shimmer />
         ) : (
-          <div className="invalid-data">
+          <div className="text-2xl">
             <p>
               {value.preVal.toUpperCase()} has not found!{" "}
-              <span>Search Again</span>
+              <span className="text-red-600">Search Again</span>
             </p>
           </div>
         )
       ) : (
-        <Restaurants list={value.data} />
+        <div className="flex gap-x-9 px-12 gap-y-10 flex-wrap mx-auto w-10/12">
+          {value?.data?.map((item) => {
+            return <RestaurantCart key={item.info.id} info={item.info} />;
+          })}
+        </div>
       )}
     </div>
   );
