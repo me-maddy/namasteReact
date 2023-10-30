@@ -1,5 +1,5 @@
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
-import RestaurantCart from "./Cart";
+import RestaurantCart from "./RestaurantCart";
 import Shimmer from "./Shimmer";
 import useBody from "../utilities/useBody";
 import useStatus from "../utilities/useStatus";
@@ -62,6 +62,7 @@ const Body = () => {
           <SearchOutlinedIcon
             className="cursor-pointer text-gray-500"
             onClick={searchList}
+            data-testid="searchicon"
           />
         </div>
       </div>

@@ -148,3 +148,54 @@ DAY 8 (#Let's get Classy)
 6. 🚧 Coding Challenges: Tackled hands-on coding challenges, creating class-based components, passing props, and mastering lifecycle methods.
 
 Class-based components offer a deeper understanding of React's foundations and are still relevant in interviews and legacy projects.
+
+DAY 9 (#Optimizing our app)
+
+1. ✅ Custom Hooks: We unlocked the potential of custom hooks, understanding their role in organizing and reusing stateful logic across components.
+
+2. ⚡ Lazy Loading Magic: Explored the concept of lazy loading, which allows us to load components on-demand, significantly improving our app's performance.
+
+3. 🌪️ Suspense Unveiled: Delved into suspense and learned how it enhances the user experience by displaying fallback content during component loading.
+
+4. 🚀 Code Splitting Strategy: Understood the advantages and disadvantages of code splitting and when to use React.lazy() and suspense for optimal app performance.
+
+5. 🤔 Strategic Usage: Grasped when and why we need lazy loading and suspense to streamline our app's loading process.
+
+Optimizing our app is not just about making it faster; it's about delivering a seamless and delightful user experience.
+
+DAY 10 (#Jo Dikhta Hai Vo Bikta Hai!)
+
+In this episode, I have learned some of the important concepts of the User Interface(UI) and resemble on the things of captivating user's interest by means of User Interface.
+
+1. 🛠️ Framework Advantages: Recognizing the benefits of using frameworks, including optimized CSS, a consistent UI, and time-saving components.
+
+2. 🎨 Styling Methods: Exploring various styling methods, such as Native CSS, SCSS, Inline CSS, style-component Libraries, CSS Frameworks, and Styled Components.
+
+3. 🚀 Tailwind CSS Benefits: Embracing the advantages of Tailwind CSS, like on-the-fly styling, reusability, reduced bundle sizes, and flexible UI.
+
+4. 🛠️ Setting Up Tailwind CSS: Learning how to integrate Tailwind CSS into projects, covering installation, configuration, and the use of Tailwind directives.
+
+5. 📐 Choosing the Right Approach: Recognizing the importance of selecting the appropriate styling method based on specific project requirements, weighing factors like maintainability and customization.
+
+6. 💼 Using Multiple Frameworks: Being aware that using multiple frameworks is possible but can lead to inconsistent styling across the application.
+
+DAY 11 (#Data is the new oil)
+
+In this episode, I have learned the concepts of UI layer and Data layer and how Data layer drives the UI layer. Data layer is the crucial part of an application and it actually controls the static UI layer.
+In UI layer, we focus only the stylying and provide a good interface to the user. Data layer is responsible for driving the styles and layout of the application. It manages the state of an application using the data.
+
+🏗️ Data's Role: Understand the distinction between the UI layer and the data layer. Data fuels the application, and it's essential to use it wisely.
+
+🔄 Revised State vs. Props: Get a fresh perspective on the roles of state and props in React, shaping component behavior.
+
+🪓 End Prop Drilling: Learn the drawbacks of prop drilling and the importance of avoiding overly complex and lengthy data-passing processes.
+
+📡 Lift State Up: Master the art of "lifting state up" to efficiently share data between components. Create a single source of truth managed by the parent.
+
+🕵️‍♂️ React Developer Tools: Explore the Chrome extension that assists in debugging data, components, and profiling. It supports various state management solutions.
+
+🪀 React Context: Dive into the React Context API, a global state management solution. Learn how to create context, use it with hooks, and apply it in class-based components.
+
+🚩 Debugging Made Easy: Discover how to display the name of a context during debugging using ContextName.displayName. This makes it easier to identify and differentiate contexts.
+
+🧩 Solving Data Challenges: Gain insights into how to manage data efficiently in your React applications, paving the way for a smooth user experience.

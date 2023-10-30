@@ -7,17 +7,25 @@ const useRestaurant = (id) => {
     preMenu: [],
     mainData: {},
   });
+
   useEffect(() => {
     fetchMenu();
   }, []);
+
   const fetchMenu = async () => {
     const response = await fetch(Menu_API + id);
     const data = await response.json();
     const info = data?.data?.cards[0]?.card?.card?.info;
+
     const menu =
       data?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
-        (item) => item?.card?.card?.hasOwnProperty("title")
+        (item) =>
+          item?.card?.card?.["@type"] ===
+            "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory" ||
+          item?.card?.card?.["@type"] ===
+            "type.googleapis.com/swiggy.presentation.food.v2.NestedItemCategory"
       );
+
     const mainData = {
       name: info?.name,
       areaName: info?.areaName,
@@ -28,6 +36,7 @@ const useRestaurant = (id) => {
       totalRating: info?.totalRatingsString,
       time: info?.sla?.slaString,
       distance: info?.sla?.lastMileTravelString,
+      parentImageId: info?.cloudinaryImageId,
     };
     setData((preValue) => ({
       ...preValue,

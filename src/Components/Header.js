@@ -1,8 +1,13 @@
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { Logo_URL } from "../utilities/constant";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Header = () => {
+  const items = useSelector((store) => store.cart.items);
+  const numberOfItems = items.reduce((accumulator, currentValue) => {
+    return accumulator + currentValue.count;
+  }, 0);
   return (
     <>
       <div className="px-4 flex justify-between items-center bg-white fixed top-0 left-0 w-full z-10 drop-shadow-md">
@@ -32,10 +37,15 @@ const Header = () => {
               </Link>
             </li>
             <li className="mr-4 relative cursor-pointer hover:drop-shadow-xl transition-all duration-300 ease-in-out">
-              <ShoppingCartOutlinedIcon />
-              <h4 className="absolute top-0 right-0 bg-red-500 text-white px-[5px] rounded-md -translate-y-2/4 translate-x-2/4">
-                4
-              </h4>
+              <Link to="/cart" className="no-underline cursor-pointer">
+                <ShoppingCartOutlinedIcon />
+                <h4
+                  className="absolute top-0 right-0 bg-red-500 text-white px-[5px] rounded-md -translate-y-2/4 translate-x-2/4"
+                  data-testid="cartcounter"
+                >
+                  {numberOfItems || 0}
+                </h4>
+              </Link>
             </li>
           </ul>
         </div>
