@@ -199,3 +199,22 @@ In UI layer, we focus only the stylying and provide a good interface to the user
 🚩 Debugging Made Easy: Discover how to display the name of a context during debugging using ContextName.displayName. This makes it easier to identify and differentiate contexts.
 
 🧩 Solving Data Challenges: Gain insights into how to manage data efficiently in your React applications, paving the way for a smooth user experience.
+
+DAY 12 (# let's build our store)
+
+- In this episode, I gained one more state management feature through Redux.
+- Redux is a state management library that is often used for big applications to handle the state of application.
+- We used redux when same state logic is required at multiple positions in an application.
+- Grasp the deep understanding of redux and it's working.
+- Understand the term store in Redux and how can we create and implement it in the application.
+- Understand the terms action, action creators, dispatch, reducers, reducer function, and implementation of reducer functions.
+
+2. Creating a Redux Store: We learned to set up a Redux store using configureStore().
+
+3. Slicing and Dicing the State: With createSlice(), we sliced and diced the state for efficient management.
+
+4. Provider Configuration: We provided the Redux store to our application through <Provider store={}/>.
+
+5. Redux vs. Redux Toolkit: We compared Redux and Redux Toolkit, understanding how Redux Toolkit simplifies complex configurations and reduces boilerplate code.
+
+6. Creating a Cart Workflow: We embarked on building a cart workflow, allowing users to add items seamlessly.

@@ -11,40 +11,46 @@ const Menu = () => {
   const [showIndex, setShowIndex] = useState(0);
   const data = useRestaurant(resId);
   const CategoryItems = categoryItems(Items);
-  return data.menu.length <= 0 ? (
+  return data?.menu?.length <= 0 ? (
     <ShimmerUI />
   ) : (
     <>
       <Back />
-      <div className="w-full h-full mb-8 mt-6">
-        <div className="w-10/12 sm:w-8/12 mx-auto">
+      <div className="w-full h-full mb-8 md:mt-6">
+        <div className="w-10/12 md:w-9/12 lg:w-8/12 mx-auto">
           <div>
             <div className="flex justify-between items-center">
-              <div className="flex flex-col gap-y-2.5">
-                <h3 className="font-semibold text-3xl text-slate-700">
-                  {data.mainData.name}
+              <div className="flex flex-col max-[370px]:gap-y-1 gap-y-2.5">
+                <h3 className="font-semibold max-[370px]:text-lg text-xl md:text-3xl text-slate-700">
+                  {data?.mainData?.name}
                 </h3>
 
-                <div className="flex flex-col gap-y-0 pl-1.5 text-gray-500 font-medium">
+                <div className="flex flex-col max-[370px]:text-xs text-sm md:text-base gap-y-0 pl-1.5 text-gray-500 font-medium">
                   <p>{data.mainData.cuisines?.join(", ")}</p>
                   <p>
-                    {data.mainData.areaName}, {data.mainData.distance}
+                    {data?.mainData?.areaName}, {data?.mainData?.distance}
                   </p>
                 </div>
               </div>
               <div className="rounded-md border border-gray-200 border-solid py-1.5 px-2.5 shadow-md">
-                <h3 className="text-green-600 text-lg font-bold">
-                  Star {data.mainData.avgRating}
+                <h3 className="text-green-600 max-[370px]:text-sm text-base md:text-lg font-bold">
+                  {data?.mainData?.avgRating
+                    ? `Star ${data?.mainData?.avgRating}`
+                    : data?.mainData?.avgRatingString}
                 </h3>
-                <hr className="w-10/12 text-gray-200" />
-                <p className="font-semibold text-gray-500">
-                  {data.mainData.totalRating}
-                </p>
+                {data?.mainData?.totalRating && (
+                  <>
+                    <hr className="w-10/12 text-gray-200" />
+                    <p className="text-sm md:text-base max-[370px]:text-xs font-semibold text-gray-500">
+                      {data?.mainData?.totalRating}
+                    </p>
+                  </>
+                )}
               </div>
             </div>
-            <div className="mt-5">
-              <hr className="border-b-[1px] border-dashed border-gray-300 mb-4 px-1.5" />
-              <div className="flex pl-2 text-gray-500 font-medium gap-x-8 text-xl">
+            <div className="mt-5 max-[370px]:mt-2.5">
+              <hr className="border-b-[1px] border-dashed border-gray-300 mb-4 max-[370px]:mb-2 px-1.5" />
+              <div className="flex pl-2 text-gray-500 font-medium gap-x-8 max-[370px]:gap-x-4 max-[370px]:text-sm text-base md:text-xl">
                 <div className="flex items-center gap-x-1.5">
                   <span>
                     <svg
@@ -97,7 +103,7 @@ const Menu = () => {
               </div>
             </div>
           </div>
-          <hr className="border-none h-[0.5px] bg-gray-300 mt-12 mb-5 drop-shadow-sm mx-3.5" />
+          <hr className="border-none h-[0.5px] bg-gray-300 mt-6 max-[370px]:mt-3 md:mt-12 max-[370px]:mb-3 mb-5 drop-shadow-sm mx-3.5" />
           {data?.menu?.map((item, index) => {
             return item?.card?.card?.itemCards ? (
               <Items

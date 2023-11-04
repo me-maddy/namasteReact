@@ -6,7 +6,7 @@ const categoryItems = (Items) => {
     const [showIndex, setShowIndex] = useState(null);
     return (
       <div className="w-full">
-        <h2 className="text-slate-800 text-2xl font-semibold px-2.5 pb-4 mb-2">
+        <h2 className="text-slate-800 max-[370px]:text-base text-lg md:text-2xl font-semibold px-2.5 pb-4 mb-2">
           {title}
         </h2>
         {categories.map((category, index) => (
@@ -23,7 +23,11 @@ const categoryItems = (Items) => {
             parentImageId={parentImageId}
           />
         ))}
-        <hr className={hide ? "hidden" : "my-5 border-y-8 bg-gray-200"} />
+        <hr
+          className={
+            hide ? "hidden" : "my-5 max-[370px]:my-3 border-y-8 bg-gray-200"
+          }
+        />
       </div>
     );
   };
